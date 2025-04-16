@@ -3,5 +3,5 @@
 - 20230033805
 - juan.dutra.707@ufrn.edu.br
 
-# Tarefas:
+## Tarefas:
 - [Tarefa 01](tarefas/t01/)
