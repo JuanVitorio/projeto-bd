@@ -1,3 +1,6 @@
+- [Esquema BD](tarefas/orm/esquemaBD.sql)
+- [Comandos](tarefas/orm/comandos.sql)
+
 ## ODBC e ORM em Python
 
 ### ODBC (Open Database Connectivity)
