@@ -5,4 +5,4 @@
 
 ## Tarefas:
 - [Tarefa 01](tarefas/t01/)
-- [Tarefa ORM](tarefas/orm/)
+- [Tarefa ORM](tarefas/t01/orm/)
