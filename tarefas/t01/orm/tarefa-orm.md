@@ -1,6 +1,3 @@
-- [Esquema BD](tarefas/orm/esquemaBD.sql)
-- [Comandos](tarefas/orm/comandos.sql)
-
 ## ODBC e ORM em Python
 
 ### ODBC (Open Database Connectivity)
@@ -52,3 +49,5 @@ session.add(novo_usuario)
 session.commit()
 
 ```
+- [Esquema BD](esquemaBD.sql)
+- [Comandos](comandos.sql)
