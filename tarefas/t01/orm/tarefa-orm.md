@@ -49,5 +49,38 @@ session.add(novo_usuario)
 session.commit()
 
 ```
+### Utilização de ORM no Django
+
+ORM (Object-Relational Mapping) é uma ferramenta que permite interagir com o banco de dados usando objetos e classes ao invés de comandos SQL diretamente. O Django possui um ORM embutido que facilita essa abstração.
+
+```python
+from django.db import models
+
+class Departamento(models.Model):
+    sigla = models.CharField(max_length=10, unique=True)
+    descricao = models.CharField(max_length=50)
+
+class Funcionario(models.Model):
+    nome = models.CharField(max_length=50)
+    sexo = models.CharField(max_length=1)
+    dtNasc = models.DateField()
+    salario = models.DecimalField(max_digits=10, decimal_places=2)
+    codSupervisor = models.ForeignKey('self', null=True, blank=True, on_delete=models.SET_NULL, related_name='supervisionados')
+    codDepto = models.ForeignKey(Departamento, null=True, blank=True, on_delete=models.SET_NULL)
+
+class Projeto(models.Model):
+    nome = models.CharField(max_length=50, unique=True)
+    descricao = models.CharField(max_length=250)
+    codResponsavel = models.ForeignKey(Funcionario, null=True, blank=True, on_delete=models.SET_NULL, related_name='projetos')
+    codDepto = models.ForeignKey(Departamento, null=True, blank=True, on_delete=models.SET_NULL)
+    dataInicio = models.DateField()
+    dataFim = models.DateField()
+
+class Atividade(models.Model):
+    descricao = models.CharField(max_length=250)
+    codProjeto = models.ForeignKey(Projeto, null=True, blank=True, on_delete=models.SET_NULL)
+    dataInicio = models.DateField()
+    dataFim = models.DateField()
+```
 - [Esquema BD](esquemaBD.sql)
 - [Comandos](comandos.sql)
